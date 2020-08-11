@@ -10,7 +10,7 @@ int main(void)
         int height= get_int("Height:\n");
         if(height>=1 && height <=8)
         {
-            printf("Stored : %i\n",height);
+            
             int n = height;
              for (int i=0;i<height;i++)
     {
