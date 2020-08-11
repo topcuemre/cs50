@@ -29,12 +29,12 @@ int main(int argc, string argv[])
     {
         if (k[i] >= 65 && k[i] <= 90)
         {
-            k[i] = ((int)k[i] + val);
+            k[i] = ((int)k[i] + val % 26);
         }
         
         else if (k[i] >= 97 && k[i] <= 122)
         {               
-            k[i] = ((int)k[i] + val);
+            k[i] = ((int)k[i] + val % 26);
         }
         else
         {
