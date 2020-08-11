@@ -1,26 +1,45 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int main(void)
+int main (void)
 {
     /* asks user the dollar value */
     int counter = 0;
     float dollars;
-    do
-    {
-        float dollars = get_float("Change owed :\n");
-        // converts dollars to cents
-    } 
-    while (!(dollars > 0.));
     
-    float cents = dollars * 100 ;
+    float cents = get_float("Change owed:\n") * 100.0 ;
+    
     // main idea of greedy algorithms that in cashier problem you have to get rid of the largest cents before the smaller ones
-    while (cents -25 >= 0.)
+    while ( cents > 0. )
     {
-        printf("da");
-        cents = cents - 25;
-        counter++;
+        if (cents - 25.0 >= 0.0)
+        {
+            cents = cents - 25.0;
+            counter++;
+            
+        }
+        
+        else if ( cents - 10.0 >= 0.0 )
+        {
+            cents = cents - 10.0;
+            counter++;
+            
+        }
+        
+        else if ( cents - 5.0 >= 0.0 )
+        {
+            cents = cents - 5.0;
+            counter++;
+        }
+        
+        else if (cents - 1.0 >= 0.0)
+        {
+            cents = cents - 1.0;
+            counter++;
+        }
+        
+        
     }
     printf("%i\n", counter);
     
-}
+} 
