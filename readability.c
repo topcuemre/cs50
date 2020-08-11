@@ -41,7 +41,7 @@ int main(void)
     }
     if ( X > 1 && X <= 16)
     {
-        printf("Grade : %i\n",X);
+        printf("Grade  %i\n",X);
     }
     if ( X < 1)
     {
