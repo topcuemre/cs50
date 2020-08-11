@@ -2,7 +2,6 @@
 #include <cs50.h>
 #include <string.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 int main(int argc, string argv[])
 {
@@ -28,14 +27,14 @@ int main(int argc, string argv[])
     int val = atoi(argv[1]);
     for (int i = 0; i < a; i++ )
     {
-        if (isupper(k[i]))
+        if (k[i] >= 65 && k[i] <= 90)
         {
-            k[i] = (k[i] - 65 + val) % 26 + 65;
+            k[i] = ((int)k[i] -65 + val) % 26+65;
         }
         
-        else if (islower(k[i]))
+        else if (k[i] >= 97 && k[i] <= 122)
         {               
-            k[i] = (k[i] -65 + val) % 26 + 65;
+            k[i] = ((int)k[i] -97 + val) % 26 +97;
         }
         else
         {
