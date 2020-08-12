@@ -119,7 +119,7 @@ int main(int argc, string argv[])
         // Reset vote counts back to zero
         for (int i = 0; i < candidate_count; i++)
         {
-             candidates[i].votes = 0;
+            candidates[i].votes = 0;
         }
     }
     return 0;
@@ -174,7 +174,7 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
-    int min=100;
+    int min = 100;
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes < min && !(candidates[i].eliminated))
@@ -191,8 +191,10 @@ bool is_tie(int min)
     for (int i = 0; i < candidate_count; i++)
     {
         if (!candidates[i].eliminated)
-            if(candidates[i].votes != min)
-                 return false;
+            if (candidates[i].votes != min)
+            {
+                return false;
+            }
     }
     return true;
 }
