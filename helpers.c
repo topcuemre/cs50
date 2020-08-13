@@ -75,7 +75,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
  
 bool adj(int i,int j ,int height,int width)
 {
-    return i >= 0 && i < height && j >=0 && j < width;
+    return i >= 0 && i < height && j >= 0 && j < width;
 }
 
 RGBTRIPLE blurr(int i,int j,int height,int width,RGBTRIPLE image[height][width])
