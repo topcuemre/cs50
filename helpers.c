@@ -99,9 +99,9 @@ RGBTRIPLE blurr(int i,int j,int height,int width,RGBTRIPLE image[height][width])
         } 
     }
     RGBTRIPLE blurred;
-    blurred.rgbtRed = round((float)redval /adjcells);
-    blurred.rgbtGreen = round((float)greenval /adjcells);
-    blurred.rgbtBlue = round((float)blueval /adjcells);
+    blurred.rgbtRed = round((float)redval / adjcells);
+    blurred.rgbtGreen = round((float)greenval / adjcells);
+    blurred.rgbtBlue = round((float)blueval / adjcells);
     return blurred;
 }
 // Blur image
@@ -119,5 +119,4 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     for (int i = 0; i < height; i++)
         for ( int j = 0; j < width; j++)
             image[i][j] = cell[i][j];
-    return;
 }
