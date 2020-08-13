@@ -82,19 +82,19 @@ RGBTRIPLE blurr(int i,int j,int height,int width,RGBTRIPLE image[height][width])
 {
     int redval,blueval,greenval;
     redval = blueval = greenval = 0;
-    float adjcells = 0.0;
-    for (int ii = -1;ii <= 1; ii++)
+    int adjcells = 0;
+    for (int ii = -1; ii <= 1; ii++)
     {
-        for (int jj = -1;jj <= 1; jj++)
+        for (int jj = -1; jj <= 1; jj++)
         {
             int k = i + ii;
             int l = j + jj;
             if(adj(k , l , height , width))
             {
                 adjcells++;
-                redval += image[ii][jj].rgbtRed;
-                blueval += image[ii][jj].rgbtBlue;
-                greenval += image[ii][jj].rgbtGreen;
+                redval += image[k][l].rgbtRed;
+                blueval += image[k][l].rgbtBlue;
+                greenval += image[k][l].rgbtGreen;
             }
         } 
     }
