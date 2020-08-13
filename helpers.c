@@ -82,7 +82,7 @@ RGBTRIPLE blurr(int i,int j,int height,int width,RGBTRIPLE image[height][width])
 {
     int redval,blueval,greenval;
     redval = blueval = greenval = 0;
-    int adjcells = 0;
+    float adjcells = 0.0;
     for (int ii = -1;ii <= 1; ii++)
     {
         for (int jj = -1;jj <= 1; jj++)
