@@ -15,13 +15,13 @@ bool new_jpeg(BYTE buffer[])
 int main(int argc, char *argv[])
 {
     //checking the argumnet condition 
-    if ( argc != 2)
+    if (argc != 2)
     {
         printf("Call with only one argument please...");
         return 1;
     }
     // accessing to memory card via fopen
-    FILE *f = fopen(argv[1],"r");
+    FILE *f = fopen(argv[1], "r");
     //buffer array initialization of equal size to the size of input file
     if (f == NULL)
     {
@@ -33,28 +33,37 @@ int main(int argc, char *argv[])
     
     bool first_jpeg = false;
     int index = 0;
+    //init of outer file
     FILE *fo;
     while (fread(buffer, BLOCK_SIZE, 1, f))
     {
-        if(new_jpeg(buffer))
+        if (new_jpeg(buffer))
         {
-            if ( !first_jpeg)
+            if (!first_jpeg)
+            {
                 first_jpeg = true;
+            }
             else
+            {
                 fclose(fo);
+            }
+//writing names for jpg's
             char file[FILE_SIZE];
             sprintf(file, "%03i.jpg", index++);
             fo = fopen(file, "w");
             if (fo == NULL)
+            {
                 return 1;
+            }
             fwrite(buffer, BLOCK_SIZE, 1, fo);
         }
         else if (first_jpeg)
         {
             //writing on file again
-            fwrite(buffer,BLOCK_SIZE, 1 ,fo);
+            fwrite(buffer, BLOCK_SIZE, 1, fo);
         }
     }
+//we should close the files after using it    
     fclose(fo);
     fclose(f);
     //checking memory bytes
