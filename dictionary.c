@@ -46,25 +46,17 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int a = (int)word[0];
-    int b = (int)word[1];
-    if (strlen(word) == 0)
+    int hash = 0;
+    int n;
+    for (int i = 0; word[i] != '\0'; i++)
     {
-        return 1;
+        if (isalpha(word[i]))
+            n = word[i] - 'a' + 1;
+        else
+            n = 27;
+        hash = ((hash << 3) + n) % N;
     }
-    if (97 <= a &&  a <= 122)
-    {
-        a -= 96;
-    }
-    if (97 <= b &&  b <= 122)
-    {
-        b -= 96;
-    }
-    
-    else
-        a -= 64;
-        b -= 64;
-    return a*b;
+    return hash;
 }
 
 // Loads dictionary into memory, returning true if successful else false
