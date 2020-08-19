@@ -10,7 +10,7 @@ if len(argv) != 2:
     
 def splitter(fname):
     nam =fname.split()
-    return nam if len(nam) >= 3 else [ nam[0], None, nam[1]]
+    return nam if len(nam) >= 3 else [ nam[0], nam[1]]
     
 database = SQL("sqlite:///students.db")
 path = argv[1]
