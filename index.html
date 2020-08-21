@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Emre Topcu</title>
+        <script src="greet.js"></script>
+    </head>
+    <body>
+        <div class="foto">
+            <img src="IMG-20200108-WA0026.jpg" alt="I am Emre =)" width="340" height="388">
+        </div>
+        <form onsubmit="greet(); return false;">
+            <input type="text" id ="name">
+            <input type="submit">
+        </form>
+        <div id="result">
+            Hello!
+        </div>
+
+        <h1 class="kafa"> Education :</h1>
+
+        <p1 style="text-align:center;">This page contains a brief explanation about my education past. </p1>
+
+        Visit <a href="edu.html">Education</a>.
+
+        <h2 class="kafa"> Extracurricular :</h2>
+
+        <p2 style="text-align:center;">This is about my hobbies and things I like to do in my free time.</p2>
+
+        Visit <a href="extra.html">Extracurricular</a>.
+
+        <h3 class="kafa"> Music :</h3>
+
+        <span> There are some cool stuff I have recently listened.</span>
+
+        Visit <a href="music.html">Music</a>. <br>
+        <div class="foto">
+            <button id="red">R</button>
+            <button id="green">G</button>
+            <button id="blue">B</button>
+        </div>
+        <script>
+        let body = document.querySelector('body');
+            document.querySelector('#red').onclick = function() {
+                body.style.backgroundColor = 'red';
+            }
+            document.querySelector('#green').onclick = function() {
+                body.style.backgroundColor = 'green';
+            }
+            document.querySelector('#blue').onclick = function() {
+                body.style.backgroundColor = 'blue';
+            }
+        </script>
+        <div id="demo"> END</div>
+    </body>
+</html>
