@@ -1,0 +1,24 @@
+.kafa
+{
+text-align: center;
+font-size:  xx-large;
+}
+.yazi
+{
+text-align: center;
+font-size: large;
+}
+.foto
+{
+text-align: center;
+}
+span
+{
+  background-color: skyblue;
+}
+#demo
+{
+  border: red 2px solid;
+  text-align: center;
+  margin: 2px;
+}
